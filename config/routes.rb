@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  root 'teachers#home'
+
+  get 'teachers/home'
+  get 'teachers/edit'
+  post 'teachers/update'
+
   get 'sessions/login'
   post 'sessions/login'
   get 'sessions/logout'
