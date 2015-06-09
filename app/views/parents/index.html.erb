@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @parents.each do |parent| %>
+    <% @parents.where(teacher_id: session[:teacher_id]).each do |parent| %>
       <tr>
         <td><%= parent.name %></td>
         <td><%= parent.student_name %></td>
