@@ -1,4 +1,5 @@
 class ParentsController < ApplicationController
+  before_action :logged_in?
   before_action :set_parent, only: [:show, :edit, :update, :destroy]
 
   # GET /parents
@@ -70,5 +71,9 @@ class ParentsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def parent_params
       params.require(:parent).permit(:teacher_id, :name, :student_name, :email)
+    end
+
+    def logged_in?
+      Teacher.find_by_id(session[:teacher_id]) ? true : (redirect_to sessions_login_path, notice: "Please Login.")
     end
 end
