@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
       teacher = Teacher.find_by_email(params[:email])
       if teacher && teacher.authenticate(params[:password])
         session[:teacher_id] = teacher.id
-        redirect_to parents_path, notice: "Login Successful."
+        redirect_to root_path, notice: "Login Successful."
       else
         flash.now[:notice] = "Invalid Login. Please Try Again."
       end
