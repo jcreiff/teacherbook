@@ -66,6 +66,9 @@ class ParentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_parent
       @parent = Parent.find(params[:id])
+      if @parent.teacher_id != session[:teacher_id]
+        redirect_to parents_path, notice: 'Access Denied'
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -76,4 +79,5 @@ class ParentsController < ApplicationController
     def logged_in?
       Teacher.find_by_id(session[:teacher_id]) ? true : (redirect_to sessions_login_path, notice: "Please Login.")
     end
+
 end
