@@ -1,8 +1,13 @@
 require 'test_helper'
 
 class TeachersControllerTest < ActionController::TestCase
+  setup do
+    @jim = teachers(:one)
+    @sarah = teachers(:two)
+  end
+
   test "should get home" do
-    get :home
+    get :home, login(@jim)
     assert_response :success
   end
 

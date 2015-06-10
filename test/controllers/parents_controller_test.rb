@@ -1,5 +1,6 @@
 require 'test_helper'
 
+
 class ParentsControllerTest < ActionController::TestCase
   setup do
     @parent = parents(:one)

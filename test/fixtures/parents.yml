@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  teacher_id: 1
-  name: MyString
-  student_name: MyString
-  email: MyString
+  teacher: :one
+  name: Bill
+  student_name: Billy
+  email: bill@bill.bill
 
 two:
-  teacher_id: 1
-  name: MyString
-  student_name: MyString
-  email: MyString
+  teacher: :two
+  name: Sue
+  student_name: Suzie
+  email: sue@sue.sue
