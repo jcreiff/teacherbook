@@ -2,4 +2,4 @@
 <p>Find me in app/views/teachers/home.html.erb</p>
 
 <%= link_to "Parent Index", parents_path %>
-<%= link_to "Edit Personal Info", teachers_edit_path %>
+<%= link_to "Edit Personal Info", edit_teacher_path(session[:teacher_id]) %>
