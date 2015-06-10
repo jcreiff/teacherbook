@@ -1,30 +1,26 @@
 
 
-<h1>Listing teachers</h1>
+<h1><%= @teacher.name %></h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Student name</th>
       <th>Email</th>
-      <th colspan="3"></th>
+      <th colspan="1"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @teachers.where(id: session[:teacher_id]).each do |teacher| %>
       <tr>
-        <td><%= teacher.name %></td>
-        <td><%= teacher.email %></td>
-        <td><%= link_to 'Show', teacher %></td>
-        <td><%= link_to 'Edit', edit_teacher_path(teacher) %></td>
-        <td><%= link_to 'Destroy', teacher, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @teacher.name %></td>
+        <td><%= @teacher.email %></td>
+        <td><%= link_to 'Edit Personal Info', edit_teacher_path(@teacher) %></td>
       </tr>
-    <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New teacher', new_teacher_path %>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Parent Index', parents_path %>

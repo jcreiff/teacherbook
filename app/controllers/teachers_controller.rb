@@ -5,12 +5,13 @@ class TeachersController < ApplicationController
   # GET /teachers
   # GET /teachers.json
   def index
-    @teachers = Teacher.all
+    @teacher = Teacher.find_by_id(session[:teacher_id])
   end
 
   # GET /teachers/1
   # GET /teachers/1.json
   def show
+    render :index
   end
 
   # GET /teachers/new
