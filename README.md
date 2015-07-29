@@ -25,3 +25,6 @@ After running `rails server`, `rake db:migrate`, and `rake db:seed`, login with 
 
 * `email: seedy@seeds.seed`
 * `password: seeds`
+
+
+######*Assignment from Week 6 of the Iron Yard's Ruby on Rails course (Durham)*
