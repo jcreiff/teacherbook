@@ -4,21 +4,22 @@ class TeachersControllerTest < ActionController::TestCase
   setup do
     @jim = teachers(:one)
     @sarah = teachers(:two)
+    session[:teacher_id] = @jim.id
   end
 
   test "should get home" do
-    get :home, login(@jim)
+    get :home
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @jim
     assert_response :success
   end
 
   test "should get update" do
-    get :update
-    assert_response :success
+    patch :update, id: @jim, teacher: {name: "Jimmy"}
+    assert_redirected_to @jim
   end
 
 end
